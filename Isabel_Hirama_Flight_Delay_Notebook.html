@@ -189,8 +189,8 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h1><p>The general aim of this project was to build a classification model for predicting domestic flight arrival delays.  I decided to narrow down that aim into a more specific ojective, in order to guide my progress and make it easy to assess improvement.</p>
-<p>The ultimate goal I settled on was to create a two-model tool to help Airbnb employees traveling between offices to book on-time flights, and to monitor their likelihood of delay on the day of travel. Given these purposes, I decided that a four-level risk forecast for delays would be more valuable to users than a binary prediction, so I built my models accordingly.</p>
-<p>In this write-up, I'll go through my process of defining this goal, developing a set of variables, defining success metrics, and building and evaluation two models. If you want to skip straight to where the R code starts, scroll down to the "Loading the Data" section.</p>
+<p>The ultimate goal I settled on was to create a dual-model tool to help Airbnb employees traveling between offices to book on-time flights, and to monitor their likelihood of delay on the day of travel. Given these aims, I decided that a four-level risk forecast for delays would be more valuable to users than a binary prediction, so I built my models accordingly.</p>
+<p>In this write-up, I'll go through my process of defining this goal, developing a set of variables, defining success metrics, and building and evaluation two models. If you want to skip straight to where the R code starts, start with the "Loading the Data" section.</p>
 <p><b>Data Sources:</b> Dept. of Transportation <a href="https://transtats.bts.gov/Tables.asp?DB_ID=120&DB_Name=Airline%20On-Time%20Performance%20Data&DB_Short_Name=On-Time">Airline On-Time Performance Data</a>, National Oceanic and Atmospheric Administration <a href="https://www.ncdc.noaa.gov/cdo-web/search">Climate Data Online Search </a><br>
 <b>Tools used:</b> R, MySQL, Excel Macros</p>
 
@@ -212,7 +212,7 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Choosing-Cities">Choosing Cities<a class="anchor-link" href="#Choosing-Cities">&#182;</a></h3><p>I decided to limit my analysis to certain cities, both because of the sheer size of the data files, and because some models can't handle categorical variables with more than a certain number of levels.</p>
-<p>My dream job is to be a data scientist at Airbnb, so I decided to pick the three US cities where Airbnb has major offices. I also added Washington DC, the area I'm from, since I imagine Airbnb executives travel often to the capital for policy discussions and press events.</p>
+<p>One of my favorite startups is Airbnb (I spent almost two year living in Airbnbs around the world as a digital nomad), so I decided to pick the three US cities where Airbnb has major offices. I also added Washington DC, the area I'm from, since I imagine Airbnb executives travel often to the capital for policy discussions and press events.</p>
 
 </div>
 </div>
@@ -251,7 +251,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I used MySQL to pull flights where both the origin and destination were among the seven airports that can be used to access the four cities:</p>
+<p>I used MySQL to identify flights where both the origin and destination were among the seven airports that can be used to access the four cities:</p>
 <blockquote><b>
 1. Seattle-Tacoma International (SEA) <br>
 2. Portland International (PDX)<br>
@@ -297,8 +297,8 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I wanted to building something that could actually be useful to Airbnb employees. So when would Airbnb-ers use a flight delay predictor tool and why? Perhaps either when booking flight tickets between offices days/weeks/months in advance, or on the day of travel, to be able to give colleagues a heads up if they were likely to be late for a meeting.</p>
-<p>The information available in these two scenerios is quite different, so I set myself the goal of building two models:</p>
+<p>My goal was build something that could actually be useful to Airbnb employees. So when would Airbnb-ers use a flight delay predictor tool and why? Perhaps either when booking flight tickets between offices days/weeks/months in advance, or on the day of travel, to be able to let colleagues know if they were likely to be late for a meeting.</p>
+<p>The information available in these two scenerios is quite different, so I decided to build two models:</p>
 <blockquote>
    <b>Basic Model:</b> to be used when booking flights, at any point in advance of travel dates.<br><br>
 
