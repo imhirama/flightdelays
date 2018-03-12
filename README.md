@@ -1,4 +1,4 @@
-#Predicting flight delays using Department of Transportation data
+# Predicting flight delays using Department of Transportation data
 
 This project was one of the admissions challenges for my Fellowship.AI cohort. The task was to build predictive models forecasting flight delays, based on historical flight data provided by the Department of Transportation. I completed the challenge using R and mySQL, building two types models for an imaginary risk stratification scenerio involving flights between Airbnb's major offices.
  
