@@ -4,6 +4,6 @@ This project was one of the admissions challenges for my Fellowship.AI cohort. T
  
 
 * [**Flight_Delay_Model_Building.ipynb**](Flight_Delay_Model_Building.ipynb) - Jupyter Notebook containing both the R code and the thought process behind the model building.<br>
-**[Flight_Delay_Code_Only.r]**(Flight_Delay_Code_Only.r) - R script with same code as in the Jupyter Notebook. Draws from the two CSVs below <br>
+* [**Flight_Delay_Code_Only.r**](Flight_Delay_Code_Only.r) - R script with same code as in the Jupyter Notebook. Draws from the two CSVs below <br>
 **[images]**(images) - Contains images used in the Jupyter notebook <br>
 **[data]**(data) - Contains the data files used to train the two models
