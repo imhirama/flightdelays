@@ -1,3 +1,4 @@
+### Note: for further description and explanation, see the Jupyter notebook included in this repository 
 
 suppressWarnings(library(chron))
 
